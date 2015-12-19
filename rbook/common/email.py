@@ -1,6 +1,6 @@
 from threading import Thread
 from flask.ext.mail import Message, Mail
-from views import app
+from models import app
 from flask import render_template
 
 app.config.update(**app.config.get('MAIL'))

@@ -1,25 +1,22 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-from app import app
 from forms import *
-from models import *
+from ..models import User, UserBook
 from flask import render_template, g, session, flash, redirect, url_for, request
 from flask.ext.moment import Moment
 from flask.ext.login import current_user, login_user, logout_user, login_required
-from common.email import send_email
+from rbook.common.email import send_email
 import datetime
+from . import main
 
-moment = Moment(app)
-
-
-@app.route('/')
+@main.route('/')
 def index():
-    users = User.select()
-    return render_template('index.html', users=users)
+    books = UserBook.select().filter(user=current_user)
+    return render_template('index.html', books=books)
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@main.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
@@ -28,25 +25,23 @@ def login():
             user.lastUpdateDate = datetime.datetime.now()
             login_user(user, form.remember_me.data)
             user.save()
-            return redirect(request.args.get('next') or url_for('index'))
+            return redirect(request.args.get('next') or url_for('main.index'))
         flash('Invalid emailname or password.')
     return render_template('auth/login.html', form=form)
 
-@app.route('/logout')
+@main.route('/logout')
 @login_required
 def logout():
     logout_user()
     flash('You have been logged out.')
-    return redirect(url_for('index'))
+    return redirect(url_for('main.index'))
 
 
-@app.route('/user/<username>')
+@main.route('/user/<username>')
 def user(username):
     return 'hello %s' % username
 
-
-
-@app.route('/signup', methods=['GET', 'POST'])
+@main.route('/signup', methods=['GET', 'POST'])
 def signup():
     form = RegistrationForm()
     if form.validate_on_submit():
@@ -61,20 +56,20 @@ def signup():
                    'auth/email/confirm', user=user, token=token)
         flash('A confirmation email has been sent to you by email.')
         user.save()
-        return redirect(url_for('login'))
+        return redirect(url_for('main.login'))
     return render_template('auth/register.html', form=form)
 
 
-@app.route('/confirm/<token>')
+@main.route('/confirm/<token>')
 @login_required
 def confirm(token):
     if g.user.confirmed:
-        return redirect(url_for('index'))
+        return redirect(url_for('main.index'))
     if g.user.confirm(token):
         flash('You have confirmed your account. Thanks!')
     else:
         flash('The confirmation link is invalid or has expired.')
-    return redirect(url_for('index'))
+    return redirect(url_for('main.index'))
 
 
 

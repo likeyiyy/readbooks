@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 from flask import g
-from models import app, db
+from ..models import app, db
 
 
 def load_database():

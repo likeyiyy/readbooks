@@ -7,14 +7,16 @@
         <h1>Hello, {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Stranger{% endif %}!</h1>
 
     </div>
+    <button><a href="{{ url_for('book.add') }}">Add a book</a></button>
+    <br>
     <div>
     {% if current_user.is_authenticated %}
         <ul class="users">
-            {% for user in users %}
-              <strong><a href="{{ url_for('user', username=user.username) }}">{{ user.username }}</a></strong>
-              <small>&mdash; {{ user.dateAdded|datetimeformat }}</small><br>
+            {% for book in books %}
+              <strong><a href="{{ url_for('book.view', bookname=book.name) }}">{{ book.bookname }}</a></strong>
+              <small>&mdash; {{ book.dateAdded|datetimeformat }}</small><br>
             {% else %}
-            <li><em>There's no user so far.</em>
+            <li><em>There's no book so far.</em>
             {% endfor %}
         </ul>
     {% endif %}
