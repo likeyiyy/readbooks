@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 from forms import *
-from ..models import User, UserBook
+from ..models import User, UserBook, Book
 from flask import render_template, g, flash, redirect, url_for, request
 from flask.ext.login import current_user, login_user, logout_user, login_required
 from rbook.common.email import send_email
@@ -11,7 +11,12 @@ from . import main
 
 @main.route('/')
 def index():
-    books = UserBook.select().filter(user=current_user)
+    books = []
+    query = Book.select().filter(id__in=UserBook.select('book').filter(user=current_user.id))
+    for book in query:
+        books.append(book)
+
+    print books
     return render_template('index.html', books=books)
 
 

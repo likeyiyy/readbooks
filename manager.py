@@ -2,15 +2,22 @@
 # encoding: utf-8
 
 from rbook import create_app
+from flask import g, current_app
 from flask.ext.script import Manager, Shell
 from flask_peewee.db import Database
-from rbook import create_app
+from rbook import create_app, db
 
 app = create_app()
-manager = Manager(app)
 
+manager = Manager(app)
 manager.add_command("shell", Shell())
 
+
+def before_request():
+    g.config = app.config
+    g.database = db.load_database()
+
+app.before_request(before_request)
 
 @manager.command
 def test():

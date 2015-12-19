@@ -40,3 +40,7 @@ def add():
         return redirect(url_for('index'))
     return render_template('book/add.html', form=form)
 
+@book.route('/book/<bookname>')
+def user(bookname):
+    return 'hello %s' % bookname
+

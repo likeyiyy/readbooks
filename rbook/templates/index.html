@@ -13,7 +13,7 @@
     {% if current_user.is_authenticated %}
         <ul class="users">
             {% for book in books %}
-              <strong><a href="{{ url_for('book.view', bookname=book.name) }}">{{ book.bookname }}</a></strong>
+              <strong><a href="{{ url_for('book.view', bookname=book.name) }}">{{ book.name }}</a></strong>
               <small>&mdash; {{ book.dateAdded|datetimeformat }}</small><br>
             {% else %}
             <li><em>There's no book so far.</em>

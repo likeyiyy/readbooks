@@ -8,6 +8,7 @@ from flask.ext.login import UserMixin, AnonymousUserMixin
 from flask import current_app
 from . import login_manager, db
 
+
 class User(UserMixin, db.Model):
     username = CharField(max_length=64, unique=True)
     email = CharField(unique=True)
