@@ -10,9 +10,11 @@
 <div class="col-md-4">
     {{ wtf.quick_form(form) }}
     <br>
-    New user?
-    <ul class="btn btn-default">
-        <li><a href="/signup">Sign up</a></li>
-    </ul>
+    新用户？
+    <input type = "button"
+                   class="btn btn-primary"
+                   value="Sign Up"
+                   onclick="location.href='{{ url_for('main.signup') }}'">
+    </input>
 </div>
 {% endblock %}

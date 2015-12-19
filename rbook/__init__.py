@@ -7,6 +7,7 @@ from flask.ext.mail import Mail
 from flask.ext.moment import Moment
 from flask.ext.login import LoginManager
 from flask_peewee.db import Database
+from flask import rbg
 import datetime
 from flask.ext.sqlalchemy import SQLAlchemy
 
@@ -14,7 +15,10 @@ import os
 import json
 
 config_path = os.environ.get('READBOOK_CONFIG') or '/opt/web/config.json'
-
+if os.path.exists(config_path):
+    obj = json.loads(open(config_path).read())
+    rbg.config = {}
+    rbg.config.update(**obj)
 
 bootstrap = Bootstrap()
 mail = Mail()

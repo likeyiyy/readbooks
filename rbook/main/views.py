@@ -12,11 +12,8 @@ from . import main
 @main.route('/')
 def index():
     books = []
-    query = Book.select().filter(id__in=UserBook.select('book').filter(user=current_user.id))
-    for book in query:
-        books.append(book)
-
-    print books
+    if current_user.is_authenticated:
+        books = Book.select().filter(id__in=UserBook.select(UserBook.book).filter(user=current_user.id))
     return render_template('index.html', books=books)
 
 

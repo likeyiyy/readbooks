@@ -55,8 +55,8 @@ class BookLabel(db.Model):
 
 
 class UserBook(db.Model):
-    user = ForeignKeyField(User, default=None)
-    book = ForeignKeyField(Book, default=None)
+    user = ForeignKeyField(User, null=True)
+    book = ForeignKeyField(Book, null=True)
 
     dateAdded = DateTimeField()
     lastUpdateDate = DateTimeField()
@@ -70,6 +70,7 @@ class AnonymousUser(AnonymousUserMixin):
         return False
 
 login_manager.anonymous_user = AnonymousUser
+
 
 @login_manager.user_loader
 def load_user(user_id):

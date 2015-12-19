@@ -10,5 +10,5 @@ from wtforms import ValidationError
 class BookForm(Form):
     name = StringField('What is this book name?', validators=[DataRequired()])
     author = StringField('What is this book author?', validators=[DataRequired()])
-    submit = SubmitField('添加')
+    submit = SubmitField(u'添加')
 
