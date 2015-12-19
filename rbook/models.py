@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-from app import app, db
-from peewee import *
+from peewee import CharField, DateTimeField, BooleanField, ForeignKeyField
 from werkzeug.security import generate_password_hash, check_password_hash
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask.ext.login import UserMixin, AnonymousUserMixin
-from app import login_manager
-
+from flask import current_app
+from . import login_manager, db
 
 class User(UserMixin, db.Model):
     username = CharField(max_length=64, unique=True)
@@ -29,7 +28,7 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
     def generate_confirmation_token(self, expiration=3600):
-        s = Serializer(app.config['SECRET_KEY'], expiration)
+        s = Serializer(current_app.config['SECRET_KEY'], expiration)
         return s.dumps({'confirm': self.id})
 
 

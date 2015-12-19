@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-from app import app
-from models import db, User
+from rbook import create_app
 from flask.ext.script import Manager, Shell
+from flask_peewee.db import Database
+from rbook import create_app
 
+app = create_app()
 manager = Manager(app)
 
 manager.add_command("shell", Shell())

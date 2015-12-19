@@ -7,11 +7,13 @@ from flask.ext.mail import Mail
 from flask.ext.moment import Moment
 from flask.ext.login import LoginManager
 from flask_peewee.db import Database
+
 import os
 import json
 bootstrap = Bootstrap()
 mail = Mail()
 moment = Moment()
+db = Database()
 
 
 login_manager = LoginManager()
@@ -29,14 +31,13 @@ def create_app():
         for key, value in obj.iteritems():
             if key.isupper():
                 app.config[key] = value
-
-    db = Database(app)
-    db.register_handlers()
+    app.config.update(**app.config.get('MAIL'))
 
     bootstrap.init_app(app)
     mail.init_app(app)
     moment.init_app(app)
     login_manager.init_app(app)
+    db.init_app(app)
 
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)

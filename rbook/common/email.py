@@ -1,10 +1,7 @@
 from threading import Thread
 from flask.ext.mail import Message, Mail
-from models import app
-from flask import render_template
-
-app.config.update(**app.config.get('MAIL'))
-mail = Mail(app)
+from flask import render_template, current_app
+from .. import mail
 
 
 def send_async_email(app, msg):
@@ -13,6 +10,7 @@ def send_async_email(app, msg):
 
 
 def send_email(to, subject, template, **kwargs):
+    app = current_app._get_current_object()
     msg = Message(app.config['ReadBook_MAIL_SUBJECT_PREFIX'] + ' ' + subject,
                   sender=app.config['ReadBook_MAIL_SENDER'], recipients=[to])
     msg.body = render_template(template + '.txt', **kwargs)

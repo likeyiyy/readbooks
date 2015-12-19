@@ -3,8 +3,7 @@
 
 from forms import *
 from ..models import User, UserBook
-from flask import render_template, g, session, flash, redirect, url_for, request
-from flask.ext.moment import Moment
+from flask import render_template, g, flash, redirect, url_for, request
 from flask.ext.login import current_user, login_user, logout_user, login_required
 from rbook.common.email import send_email
 import datetime
@@ -40,6 +39,7 @@ def logout():
 @main.route('/user/<username>')
 def user(username):
     return 'hello %s' % username
+
 
 @main.route('/signup', methods=['GET', 'POST'])
 def signup():
