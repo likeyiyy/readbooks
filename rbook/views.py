@@ -15,7 +15,8 @@ moment = Moment(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    users = User.select()
+    return render_template('index.html', users=users)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -39,9 +40,9 @@ def logout():
     return redirect(url_for('index'))
 
 
-@app.route('/user')
-def user():
-    return 'hello world'
+@app.route('/user/<username>')
+def user(username):
+    return 'hello %s' % username
 
 
 
@@ -74,6 +75,9 @@ def confirm(token):
     else:
         flash('The confirmation link is invalid or has expired.')
     return redirect(url_for('index'))
+
+
+
 
 
 

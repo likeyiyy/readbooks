@@ -9,6 +9,7 @@ from flask.ext.moment import Moment
 from flask.ext.login import LoginManager
 import json
 import os
+import datetime
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
 mail = Mail(app)
@@ -33,6 +34,12 @@ def before_request():
     from common import utils
     utils.load_database()
 
-app.before_request(before_request)
+
+def format_datetime(timestamp):
+    """Format a timestamp for display."""
+    return timestamp.strftime('%Y-%m-%d @ %H:%M')
+
+app.jinja_env.filters['datetimeformat'] = format_datetime
+
 
 
