@@ -13,7 +13,7 @@ from . import main
 def index():
     books = []
     if current_user.is_authenticated:
-        books = Book.select().filter(id__in=UserBook.select(UserBook.book).filter(user=current_user.id))
+        books = Book.select().filter(id__in=UserBook.select(UserBook.book).filter(user=current_user.id)).order_by(-Book.dateAdded)
     return render_template('index.html', books=books)
 
 
@@ -39,6 +39,7 @@ def logout():
 
 
 @main.route('/user/<username>')
+@login_required
 def user(username):
     return 'hello %s' % username
 

@@ -54,8 +54,8 @@ def create_app():
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
-    from .book import book as auth_blueprint
-    app.register_blueprint(auth_blueprint, url_prefix='/book')
+    from .book import book as book_blueprint
+    app.register_blueprint(book_blueprint, url_prefix='/book')
 
     app.jinja_env.filters['datetimeformat'] = format_datetime
 

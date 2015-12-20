@@ -50,19 +50,6 @@ class Label(db.Model):
     name = CharField(unique=True)
     dateAdded = DateTimeField()
 
-
-class BookLabel(db.Model):
-    label = ForeignKeyField(Label)
-    user_book = ForeignKeyField(UserBook)
-    dateAdded = DateTimeField()
-    lastUpdateDate = DateTimeField()
-
-    class Meta:
-        indexes = (
-            (('label', 'user_book'), True),
-        )
-
-
 class UserBook(db.Model):
     user = ForeignKeyField(User, null=True)
     book = ForeignKeyField(Book, null=True)
@@ -73,6 +60,18 @@ class UserBook(db.Model):
     class Meta:
         indexes = (
             (('user', 'book'), True),
+        )
+
+
+class BookLabel(db.Model):
+    label = ForeignKeyField(Label)
+    userbook = ForeignKeyField(UserBook)
+    dateAdded = DateTimeField()
+    lastUpdateDate = DateTimeField()
+
+    class Meta:
+        indexes = (
+            (('label', 'userbook'), True),
         )
 
 
