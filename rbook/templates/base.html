@@ -7,12 +7,16 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 {% endblock %}
-
-{% block scripts %}
-    {{ super() }}
-    <script src="{{ url_for('static', filename='bootstrap-tags.min.js') }}"></script>
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap-tags.css') }}">
-    {{ moment.include_moment() }}
+{% endblock %}
+{% block scripts %}
+    <script src="{{ url_for('static', filename='ajax/libs/jquery/1.11.3/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='ajax/libs/moment.js/2.3.1/moment-with-langs.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-tags.js') }}"></script>
+
 {% endblock %}
 
 {% block navbar %}

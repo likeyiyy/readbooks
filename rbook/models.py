@@ -40,6 +40,11 @@ class Book(db.Model):
     dateAdded = DateTimeField()
     lastUpdateDate = DateTimeField()
 
+    class Meta:
+        indexes = (
+            (('name', 'author'), True),
+        )
+
 
 class Label(db.Model):
     name = CharField()
@@ -60,6 +65,11 @@ class UserBook(db.Model):
 
     dateAdded = DateTimeField()
     lastUpdateDate = DateTimeField()
+
+    class Meta:
+        indexes = (
+            (('user', 'book'), True),
+        )
 
 
 class AnonymousUser(AnonymousUserMixin):

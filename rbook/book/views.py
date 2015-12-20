@@ -12,12 +12,13 @@ from . import book
 
 
 @login_required
-@book.route('/add', methods=['GET','POST'])
+@book.route('/add', methods=['GET', 'POST'])
 def add():
     form = BookForm()
     if form.validate_on_submit():
         now = datetime.datetime.now()
         new_book = Book.select().filter(name=form.name.data, author=form.author.data).first()
+        import ipdb; ipdb.set_trace()
         if new_book is None:
             new_book = Book(name=form.name.data,
                             author=form.author.data,
@@ -37,7 +38,6 @@ def add():
                                 lastUpdateDate=now).execute()
             except peewee.IntegrityError:
                 flash('You had already add this book.')
-
         flash('Book add now.')
         return redirect(url_for('main.index'))
     return render_template('book/add.html', form=form)
