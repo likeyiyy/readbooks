@@ -47,16 +47,20 @@ class Book(db.Model):
 
 
 class Label(db.Model):
-    name = CharField()
+    name = CharField(unique=True)
     dateAdded = DateTimeField()
-    lastUpdateDate = DateTimeField()
 
 
 class BookLabel(db.Model):
     label = ForeignKeyField(Label)
-    book = ForeignKeyField(Book)
+    user_book = ForeignKeyField(UserBook)
     dateAdded = DateTimeField()
     lastUpdateDate = DateTimeField()
+
+    class Meta:
+        indexes = (
+            (('label', 'user_book'), True),
+        )
 
 
 class UserBook(db.Model):

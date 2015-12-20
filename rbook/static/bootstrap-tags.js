@@ -561,7 +561,7 @@
                     return "large";
                 }
             }();
-            return "<input type='text' class='tags-input input-" + tagSize + "' />";
+            return "<input  type='text' class='tags-input input-" + tagSize + "' />";
         };
     }).call(this);
     (function() {
@@ -597,7 +597,10 @@
             if (options == null) {
                 options = {};
             }
-            return "<div class='tag label " + options.tagClass + " " + options.tagSize + "' " + (options.isPopover ? "rel='popover'" : "") + ">    <span>" + Tags.Helpers.addPadding(options.tag, 2, options.isReadOnly) + "</span>    " + (options.isReadOnly ? "" : "<a><i class='remove glyphicon glyphicon-remove-sign glyphicon-white' /></a>") + "  </div>";
+            return "<div class='tag label " + options.tagClass + " " + options.tagSize + "' " + (options.isPopover ? "rel='popover'" : "") + ">    "
+                + "<span>" + Tags.Helpers.addPadding(options.tag, 2, options.isReadOnly) + "</span>    "
+                + (options.isReadOnly ? "" : "<a><i class='remove glyphicon glyphicon-remove-sign glyphicon-white' /></a>")
+                + "  </div>";
         };
     }).call(this);
     (function() {

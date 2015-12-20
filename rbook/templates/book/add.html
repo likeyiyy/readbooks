@@ -4,12 +4,18 @@
 {% block scripts %}
     {{ super() }}
     <script>
-            $(function() {
-                $('#my-tag-list').tags({
-                    suggestions:["basic", "suggestions"],
-                    excludeList:["not", "these", "words"]
-                });
+        $(function() {
+            $('#my-tag-list').tags({
+                suggestions:["basic", "suggestions"],
+                excludeList:["not", "these", "words"]
             });
+        });
+        function update_tags(){
+            tag_list = $('#my-tag-list').tags().getTags()
+            input = top.document.getElementsByName("tags");
+            input[0].value=JSON.stringify(tag_list);
+            console.log(tag_list, JSON.stringify(tag_list))
+        }
     </script>
 {% endblock %}
 {% block title %}ReadBook - Add Book{% endblock %}
@@ -19,8 +25,41 @@
     <h1>Add Book</h1>
 </div>
 <div class="col-md-4">
-    <div id="my-tag-list" class="tag-list"></div>
-    {{ wtf.quick_form(form) }}
+    <form action="" method="post" name="index">
+        {{form.hidden_tag()}}
+        <div class="container">
+            {% for item in form %}
+                {% if item.name != "csrf_token"%}
+
+                    {% if item.name == 'tags' %}
+                        {{ item.label }}
+                        <div id="my-tag-list" class="tag-list" style="width:400px"></div>
+                        <div class="input-group tag-list">
+                            {{item(class="form-control",style="width:400px", type="hidden")}}
+                        </div>
+                    {% elif item.name == 'submit' %}
+                        <div class="input-group tag-list">
+                                {{item(class="form-control btn-primary",style="width:400px", onclick="update_tags()")}}
+                        </div>
+                    {% else %}
+                        {{ item.label }}
+                        <div class="input-group tag-list">
+                            {{item(class="form-control",style="width:400px")}}
+                        </div>
+                    {% endif %}
+
+                    {% for error in item.errors %}
+                        <button type="button" class="btn btn-danger" > {{error}} </button>
+                    {% endfor %}
+                <hr>
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+    </form>
+
     <br>
 </div>
 {% endblock %}
