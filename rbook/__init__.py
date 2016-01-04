@@ -8,7 +8,10 @@ from flask.ext.moment import Moment
 from flask.ext.login import LoginManager
 from flask_peewee.db import Database
 from flask import rbg
+<<<<<<< HEAD
 from flask.ext.pagedown import PageDown
+=======
+>>>>>>> 0a24f05f0bc3bff8daf8f25f61895d6232cb6d63
 
 import os
 import json

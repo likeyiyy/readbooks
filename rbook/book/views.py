@@ -46,7 +46,6 @@ def add_book(name, author, tags, contents):
             flash('You had already add this book.')
 
 
-
 @book.route('/add', methods=['GET', 'POST'])
 @login_required
 def add():
@@ -60,7 +59,6 @@ def add():
         flash('Book add now.')
         return redirect(url_for('book.view', bookname=form.name.data))
     return render_template('book/add.html', form=form)
-
 
 
 @book.route('/view/<bookname>')
