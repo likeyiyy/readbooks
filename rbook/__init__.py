@@ -8,8 +8,6 @@ from flask.ext.moment import Moment
 from flask.ext.login import LoginManager
 from flask_peewee.db import Database
 from flask import rbg
-import datetime
-from flask.ext.sqlalchemy import SQLAlchemy
 
 import os
 import json
