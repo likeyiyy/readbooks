@@ -2,13 +2,50 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block title %}ReadBook - View Book{% endblock %}
-
+{% block scripts %}
+    {{ super() }}
+    <script>
+        var btnType = [
+            'btn-primary',
+            'btn-success',
+            'btn-info',
+            'btn-warning',
+            'btn-danger'
+        ];
+        $(document).ready(function(){
+            $("form:first").attr('enctype', 'multipart/form-data');
+            tags = document.getElementsByName('book-tags');
+            for (var i = 0; i < tags.length; i++) {
+                var randomIndex = Math.floor(Math.random() * btnType.length);
+                tags[i].classList.remove('btn-info');
+                tags[i].classList.add(btnType[randomIndex])
+            }
+        })
+    </script>
+    {{ pagedown.include_pagedown() }}
+{% endblock %}
 {% block page_content %}
 <div class="page-header">
-    <h1>View Book</h1>
+    <h1>检视阅读&分析阅读</h1>
 </div>
+    {% if book %}
+        <h3>书名：<a>{{ book.name }}</a></h3>
+        <h3>作者：<a>{{ book.author }}</a></h3>
+        <h3>标签：
+            {% for tag in book.tags %}
+                <button class="btn btn-info" name="book-tags">{{ tag.name }}</button>
+            {% else %}
+                <li><em>No tags.</em>
+            {% endfor %}
+        </h3>
+        <div>
+        <h3>目录：</h3>
+        <img src="{{ book.contents }}">
+        </div>
 
-{% endblock %}
 
-{% block scripts %}
+        {{ wtf.quick_form(form) }}
+    {% else %}
+        <li><em>There's no this book so far.</em>
+    {% endif %}
 {% endblock %}
