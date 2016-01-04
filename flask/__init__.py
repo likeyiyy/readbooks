@@ -50,4 +50,5 @@ from .sessions import SecureCookieSession as Session
 json_available = True
 
 class rbg(object):
+    config = {}
     pass

@@ -1,13 +1,14 @@
 import peewee
 from peewee import *
+from flask import rbg
 
 from flask_peewee.exceptions import ImproperlyConfigured
 from flask_peewee.utils import load_class
 
 
 class Database(object):
-    def __init__(self, app, database=None):
-        self.app = app
+    def __init__(self, database=None):
+        self.app = None
         self.database = database
 
         if self.database is None:
@@ -17,8 +18,11 @@ class Database(object):
 
         self.Model = self.get_model_class()
 
+    def init_app(self, app):
+        self.app = app
+
     def load_database(self):
-        self.database_config = dict(self.app.config['DATABASE'])
+        self.database_config = dict(rbg.config['DATABASE'])
         try:
             self.database_name = self.database_config.pop('name')
             self.database_engine = self.database_config.pop('engine')
@@ -40,7 +44,7 @@ class Database(object):
     def get_model_class(self):
         class BaseModel(Model):
             class Meta:
-                database = self.database
+                pass
 
         return BaseModel
 
