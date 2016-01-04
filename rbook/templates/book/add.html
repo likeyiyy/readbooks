@@ -16,6 +16,10 @@
             input[0].value=JSON.stringify(tag_list);
             console.log(tag_list, JSON.stringify(tag_list))
         }
+
+        $(document).ready(function(){
+            $("form:first").attr('enctype', 'multipart/form-data');
+        })
     </script>
 {% endblock %}
 {% block title %}ReadBook - Add Book{% endblock %}
@@ -49,7 +53,7 @@
                     {% endif %}
 
                     {% for error in item.errors %}
-                        <button type="button" class="btn btn-danger" > {{error}} </button>
+                        <button type="button" class="btn btn-danger" disabled="disabled"> {{error}} </button>
                     {% endfor %}
                 <hr>
                 {% endif %}

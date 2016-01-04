@@ -9,6 +9,9 @@ from flask.ext.login import LoginManager
 from flask_peewee.db import Database
 from flask import rbg
 
+from flask.ext.pagedown import PageDown
+
+
 import os
 import json
 
@@ -21,6 +24,7 @@ if os.path.exists(config_path):
 bootstrap = Bootstrap()
 mail = Mail()
 moment = Moment()
+pagedown = PageDown()
 db = Database()
 
 
@@ -46,8 +50,11 @@ def create_app():
     mail.init_app(app)
     moment.init_app(app)
     login_manager.init_app(app)
+    pagedown.init_app(app)
     db.init_app(app)
     db.register_handlers()
+
+    from werkzeug.wsgi import SharedDataMiddleware
 
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
@@ -56,6 +63,10 @@ def create_app():
     app.register_blueprint(book_blueprint, url_prefix='/book')
 
     app.jinja_env.filters['datetimeformat'] = format_datetime
+
+    app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
+        '/opt/web/upload': os.path.join(os.path.dirname(__file__), '/opt/web/upload')
+    })
 
     return app
 

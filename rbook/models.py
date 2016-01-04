@@ -7,7 +7,7 @@ from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask.ext.login import UserMixin, AnonymousUserMixin
 from flask import current_app
 from . import login_manager, db
-
+import os
 
 class User(UserMixin, db.Model):
     username = CharField(max_length=64, unique=True)
@@ -36,7 +36,7 @@ class User(UserMixin, db.Model):
 class Book(db.Model):
     name = CharField()
     author = CharField()
-
+    contents_path = CharField()
     dateAdded = DateTimeField()
     lastUpdateDate = DateTimeField()
 
@@ -44,6 +44,23 @@ class Book(db.Model):
         indexes = (
             (('name', 'author'), True),
         )
+
+    def path(self, type, name, ext):
+        return os.path.join('/opt/web/upload', type, name+'.'+ext)
+
+    @property
+    def contents(self):
+        if not self.contents_path:
+            self.contents_path = self.path('contents', self.name, 'jpg')
+        return self.contents_path
+
+    @contents.setter
+    def contents(self, data):
+        if not self.contents_path:
+            self.contents_path = self.path('contents', self.name, 'jpg')
+        with open(self.contents_path, 'wb') as fp:
+            fp.write(data)
+
 
 
 class Label(db.Model):
