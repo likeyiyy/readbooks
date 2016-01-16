@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <script type="text/javascript">
+
+            String.prototype.format= function(){
+                   var args = arguments;
+                   return this.replace(/\{(\d+)\}/g,function(s,i){
+                     return args[i];
+                   });
+            };
+            var regFunc = function(str) {
+                var re = /\d+/;
+                var m;
+
+                if ((m = re.exec(str)) !== null) {
+                    if (m.index === re.lastIndex) {
+                        re.lastIndex++;
+                    }
+                    return Number(m[0])
+                }
+            };
+            var scrollFunc=function(e){
+                e=e || window.event;
+                
+                if(e.wheelDelta){
+                    var t3 = document.getElementById('move_table');
+                    var current_margin = regFunc(t3.getAttribute('style'));
+
+                    if (e.wheelDelta == 120){
+                        current_margin += 10;
+                        var new_str1 = 'margin-left:{0}px;'.format([current_margin]);
+                        t3.setAttribute('style', new_str1)
+                    }else{
+                        current_margin -= 10;
+                        var new_str2 = 'margin-left:{0}px;'.format([current_margin]);
+                        t3.setAttribute('style', new_str2)
+                    }
+                }
+            };
+            window.onmousewheel=document.onmousewheel=scrollFunc;
+        </script>
+    </head>
+
+    <div id="add_null_line"></div>
+    <table id="move_table" border="1" style="margin-left:10px;" >
+    <tr>
+        {% for head in keys %}
+        <th>{{ head }}</th>
+        {% endfor %}
+    </tr>
+    {% for item in book %}
+        <tr>
+        {% for head in keys %}
+        <th>{{ item[head] }}</th>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+</html>
+

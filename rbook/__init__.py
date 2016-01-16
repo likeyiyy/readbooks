@@ -62,6 +62,9 @@ def create_app():
     from .book import book as book_blueprint
     app.register_blueprint(book_blueprint, url_prefix='/book')
 
+    from .timeline import timeline as timeline_blueprint
+    app.register_blueprint(timeline_blueprint, url_prefix='/timeline')
+
     app.jinja_env.filters['datetimeformat'] = format_datetime
 
     app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
