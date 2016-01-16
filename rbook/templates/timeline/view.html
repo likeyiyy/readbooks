@@ -21,7 +21,7 @@
             };
             var scrollFunc=function(e){
                 e=e || window.event;
-                
+
                 if(e.wheelDelta){
                     var t3 = document.getElementById('move_table');
                     var current_margin = regFunc(t3.getAttribute('style'));
@@ -42,7 +42,7 @@
     </head>
 
     <div id="add_null_line"></div>
-    <table id="move_table" border="1" style="margin-left:10px;" >
+    <table id="move_table" border="1" cellspacing="0" style="margin-left:10px;" >
     <tr>
         {% for head in keys %}
         <th>{{ head }}</th>
@@ -51,7 +51,7 @@
     {% for item in book %}
         <tr>
         {% for head in keys %}
-        <th>{{ item[head] }}</th>
+        <td>{{ item[head] }}</td>
         {% endfor %}
         </tr>
     {% endfor %}
