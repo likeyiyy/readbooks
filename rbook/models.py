@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-from peewee import CharField, DateTimeField, BooleanField, ForeignKeyField
+from peewee import CharField, DateTimeField, BooleanField, ForeignKeyField, IntegerField
 from werkzeug.security import generate_password_hash, check_password_hash
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask.ext.login import UserMixin, AnonymousUserMixin
@@ -90,6 +90,14 @@ class BookLabel(db.Model):
         indexes = (
             (('label', 'userbook'), True),
         )
+
+class GanDanText(db.Model):
+    title = CharField()
+    url = CharField()
+    author = CharField()
+    answer_number = IntegerField()
+    dateAdded = DateTimeField()
+
 
 
 class AnonymousUser(AnonymousUserMixin):

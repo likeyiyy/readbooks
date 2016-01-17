@@ -5,8 +5,8 @@ from rbook import create_app
 from flask import g, current_app
 from flask.ext.script import Manager, Shell
 from flask_peewee.db import Database
+from rbook.models import *
 from rbook import create_app, db
-
 app = create_app()
 
 manager = Manager(app)
@@ -31,6 +31,14 @@ def create_tables():
     for klass in db.Model.__subclasses__():
         print klass._meta.db_table
         klass.create_table(fail_silently=True)
+
+
+@manager.option('-m', '--model')
+def create_table(model):
+    klass = globals()[model]
+    klass.create_table(fail_silently=True)
+
+
 
 @manager.command
 def init():

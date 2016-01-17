@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>自动增加宽度</title>
+</head>
+<body>
+    <div id="asd" style="position:absolute;top:4px;left:50%;margin-left:-100px;width:200px;height:400px;background-color:#f90;border:4px solid black;"></div>
+    <script type="text/javascript">
+    var t = document.getElementById('asd');
+    t.onmousemove = function(e) {
+        e = window.event || e;
+        hei = e.offsetY ? e.offsetY : e.layerY;
+        if(parseInt(document.getElementById('asd').style.height)-parseInt(hei) <=5 ){
+            document.getElementById('asd').style.height = (parseInt(document.getElementById('asd').style.height) + 200) +'px';
+        }
+    };
+    </script>
+ </body>
+</html>
