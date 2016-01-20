@@ -98,7 +98,12 @@ class GanDanText(db.Model):
     answer_number = IntegerField()
     dateAdded = DateTimeField()
 
-
+class MarryGirl(db.Model):
+    title = CharField()
+    url = CharField()
+    author = CharField()
+    address = CharField()
+    dateAdded = DateTimeField()
 
 class AnonymousUser(AnonymousUserMixin):
     def can(self, permissions):

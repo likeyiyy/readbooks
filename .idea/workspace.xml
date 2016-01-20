@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f405e315-0f30-4ac7-9c9a-f1b52be4247f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbook/templates/timeline/onscorll.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbook/templates/timeline/right_click.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbook/templates/timeline/gandan.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rbook/templates/timeline/marrygirl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/retry.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager.py" afterPath="$PROJECT_DIR$/manager.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbook/models.py" afterPath="$PROJECT_DIR$/rbook/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbook/templates/timeline/view.html" afterPath="$PROJECT_DIR$/rbook/templates/timeline/view.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rbook/timeline/views.py" afterPath="$PROJECT_DIR$/rbook/timeline/views.py" />
     </list>
     <ignored path="readbooks.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,21 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbook/timeline/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rbook/timeline/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.7081413">
+              <caret line="42" column="66" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
               <folding>
                 <element signature="e#41#109#0" expanded="true" />
               </folding>
@@ -50,22 +43,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbook/templates/timeline/view.html">
+      <file leaf-file-name="gandan.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rbook/templates/timeline/gandan.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+            <state vertical-scroll-proportion="-14.928572">
+              <caret line="22" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="right_click.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbook/templates/timeline/right_click.html">
+      <file leaf-file-name="marrygirl.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rbook/templates/timeline/marrygirl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="11" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="11" />
+            <state vertical-scroll-proportion="-12.892858">
+              <caret line="19" column="33" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="33" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rbook/templates/book/view.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.5">
+              <caret line="14" column="26" selection-start-line="0" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rbook/templates/timeline/view.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.75">
+              <caret line="52" column="27" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="27" />
+              <folding>
+                <element signature="n#style#0;n#table#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -80,11 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rbook/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44546852">
-              <caret line="102" column="19" selection-start-line="102" selection-start-column="6" selection-end-line="102" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="103" column="22" selection-start-line="103" selection-start-column="13" selection-end-line="103" selection-end-column="22" />
               <folding>
                 <element signature="e#41#129#0" expanded="true" />
               </folding>
@@ -96,30 +111,28 @@
         <entry file="file://$PROJECT_DIR$/manager.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="24" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbook/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="68" selection-start-line="65" selection-start-column="68" selection-end-line="65" selection-end-column="68" />
+              <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
               <folding>
-                <element signature="e#41#64#0" expanded="true" />
+                <element signature="e#41#69#0" expanded="true" />
+                <element signature="e#474#531#0" expanded="false" />
+                <element signature="e#602#751#0" expanded="false" />
+                <element signature="e#795#916#0" expanded="false" />
+                <element signature="e#981#1048#0" expanded="false" />
+                <element signature="e#1083#1098#0" expanded="false" />
+                <element signature="e#1341#1400#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rbook/book/__init__.py">
+      <file leaf-file-name="retry.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/retry.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <folding>
+                <element signature="e#41#52#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,7 +141,7 @@
         <entry file="file://$PROJECT_DIR$/rbook/book/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="73" column="17" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="17" />
+              <caret line="67" column="12" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="12" />
               <folding>
                 <element signature="e#41#109#0" expanded="true" />
               </folding>
@@ -152,12 +165,16 @@
         <option value="$PROJECT_DIR$/peewee.py" />
         <option value="$PROJECT_DIR$/rbook/timeline/__init__.py" />
         <option value="$PROJECT_DIR$/rbook/__init__.py" />
-        <option value="$PROJECT_DIR$/rbook/timeline/views.py" />
         <option value="$PROJECT_DIR$/rbook/templates/timeline/right_click.html" />
-        <option value="$PROJECT_DIR$/rbook/templates/timeline/view.html" />
         <option value="$PROJECT_DIR$/rbook/templates/timeline/onscorll.html" />
-        <option value="$PROJECT_DIR$/manager.py" />
+        <option value="$PROJECT_DIR$/rbook/book/views.py" />
+        <option value="$PROJECT_DIR$/rbook/templates/timeline/view.html" />
+        <option value="$PROJECT_DIR$/retry.py" />
         <option value="$PROJECT_DIR$/rbook/models.py" />
+        <option value="$PROJECT_DIR$/manager.py" />
+        <option value="$PROJECT_DIR$/rbook/templates/timeline/gandan.html" />
+        <option value="$PROJECT_DIR$/rbook/templates/timeline/marrygirl.html" />
+        <option value="$PROJECT_DIR$/rbook/timeline/views.py" />
       </list>
     </option>
   </component>
@@ -225,6 +242,64 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="rbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="readbooks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="readbooks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timeline" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="readbooks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="readbooks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="readbooks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="readbooks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timeline" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -487,40 +562,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/rbook/timeline/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbook/timeline/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-          <folding>
-            <element signature="e#41#109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbook/templates/timeline/view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbook/templates/timeline/right_click.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rbook/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -809,16 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rbook/book/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="17" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="17" />
-          <folding>
-            <element signature="e#41#109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rbook/timeline/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -834,24 +865,6 @@
           <folding>
             <element signature="e#41#64#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbook/timeline/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-          <folding>
-            <element signature="e#41#109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rbook/templates/timeline/view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -871,20 +884,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manager.py">
+    <entry file="file://$PROJECT_DIR$/rbook/book/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="24" />
+          <caret line="67" column="12" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="12" />
+          <folding>
+            <element signature="e#41#109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbook/templates/book/view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.5">
+          <caret line="14" column="26" selection-start-line="0" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/retry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="e#41#52#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rbook/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44546852">
-          <caret line="102" column="19" selection-start-line="102" selection-start-column="6" selection-end-line="102" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="103" column="22" selection-start-line="103" selection-start-column="13" selection-end-line="103" selection-end-column="22" />
           <folding>
             <element signature="e#41#129#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+          <folding>
+            <element signature="e#41#69#0" expanded="true" />
+            <element signature="e#474#531#0" expanded="false" />
+            <element signature="e#602#751#0" expanded="false" />
+            <element signature="e#795#916#0" expanded="false" />
+            <element signature="e#981#1048#0" expanded="false" />
+            <element signature="e#1083#1098#0" expanded="false" />
+            <element signature="e#1341#1400#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbook/templates/timeline/view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.75">
+          <caret line="52" column="27" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbook/templates/timeline/marrygirl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.892858">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbook/templates/timeline/gandan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.928572">
+          <caret line="22" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbook/timeline/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7081413">
+          <caret line="42" column="66" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
+          <folding>
+            <element signature="e#41#109#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}ReadBook - View Book{% endblock %}
+{% block page_content %}
+<div class="page-header">
+    <h1>文章列表</h1>
+</div>
+    <table class="table" >
+    <tr>
+        {% for title in titles %}
+            <th>{{ title }}</th>
+        {% endfor %}
+    </tr>
+    {% for list in lists %}
+        <tr>
+            <td><a href="{{ list.url }}" target="_blank"> {{ list.title }}</a></td>
+            <td>{{ list.author }}</td>
+            <td>{{ list.address }}</td>
+            <td>{{ list.dateAdded }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
